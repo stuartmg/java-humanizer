@@ -1,0 +1,13 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+description = 'A very simple CAPTCHA method using questions instead of images'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+}
