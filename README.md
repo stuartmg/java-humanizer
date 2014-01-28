@@ -7,7 +7,7 @@ Java Humanizer works by providing a properties file containing simple questions 
 
 ## Installation
 
-Download the jar file and add to your project's classpath.
+Clone this project to your machine and run <code>gradlew</code> ( if you don't have gradle installed already ). Once gradle is installed, run: <code>gradle build</code>. This will output a jar file in <code>build/libs</code> that you can include in your project.
 
 ## Usage
 
@@ -17,14 +17,14 @@ Get an instance of the Humanizer class:
 Humanizer humanizer = new Humanizer();
 
 </code></pre>
-  
+
 Ask it for a random question:
 
 <pre><code>
 Question question = humanizer.getQuestion();
 
 </code></pre>
-  
+
 Display the question in your JSP:
 
 <pre><code>
@@ -33,8 +33,8 @@ Display the question in your JSP:
 &lt;input type="text" id="humanizerAnswer" name="humanizerAnswer" size="64" /&gt;
 
 </code></pre>
-		
-In your action, check the answer:
+
+In your handler, check the answer:
 
 <pre><code>
 long id = // get question id from paaramters
@@ -50,15 +50,15 @@ The jar file comes with a properties file containing a set of questions and answ
 
 The format for this file is:
 
-<pre><code>  
+<pre><code>
 question.&lt;n&gt;=Question goes here
 answer.&lt;n&gt;=Answer1; Answer2
 
 </code></pre>
-  
-When the file is parsed, the value of <n> is used as the question's ID so we can find the correct set of answers. Multiple answers are supported for each question, which allows for variations of the answer. For example:
 
-<pre><code>  
+When the file is parsed, the value of &lt;n&gt; is used as the question's ID so we can find the correct set of answers. Multiple answers are supported for each question, which allows for variations of the answer. For example:
+
+<pre><code>
 question.1=Two plus two?
 answer.1=4; four
 
@@ -78,9 +78,18 @@ Humanizer humanizer = new Humanizer(props);
 
 </code></pre>
 
+## Changes
+
+Changes in version 1.0:
+
+- Build was changed from maven to gradle
+- JUnit tests were converted to use the [Spock Framework](http://www.spockframework.org)
+- Questions were modified based on user feedback from 2 years in production
+- Updates to README
+
 ## Acknowledgments
 
-The questions included in this project are taken directly from [Humanizer](https://github.com/kiskolabs/humanizer) by [Kisko Labs](http://kiskolabs.com/)
+The original list of questions included in this project are taken directly from [Humanizer](https://github.com/kiskolabs/humanizer) by [Kisko Labs](http://kiskolabs.com/). The questions have been modified slightly based on user feedback from usage in production at [BiddingForGood](https://www.biddingforgood.com).
 
 ## License
 
